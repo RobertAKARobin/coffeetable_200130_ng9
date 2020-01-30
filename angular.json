@@ -6,7 +6,7 @@
     "coffeetable": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:component": {
+        "@ngrx/schematics:component": {
           "style": "scss"
         }
       },
@@ -127,6 +127,7 @@
   },
   "defaultProject": "coffeetable",
   "cli": {
-    "analytics": false
+    "analytics": false,
+    "defaultCollection": "@ngrx/schematics"
   }
 }
