@@ -8,6 +8,8 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { AppComponent } from './containers/app/app.component';
 import { metaReducers, ROOT_REDUCERS } from './reducers';
 
+import { DatasourceModule } from 'src/app/datasource';
+
 @NgModule({
   bootstrap: [AppComponent],
   declarations: [
@@ -27,6 +29,7 @@ import { metaReducers, ROOT_REDUCERS } from './reducers';
       },
     }),
     StoreDevtoolsModule.instrument({}),
+    DatasourceModule,
   ],
 })
 export class CoreModule { }
