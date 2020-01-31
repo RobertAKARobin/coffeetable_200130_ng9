@@ -1,13 +1,14 @@
 import { Action, createReducer, on } from '@ngrx/store';
 
-export const featureKey = 'layout';
+export const featureKey = 'coffeetable';
 
 export interface State {
-  message: string;
+  // tslint:disable
+  collections: any[],
 }
 
 export const initialState: State = {
-  message: 'Hello, world!',
+  collections: []
 };
 
 const _reducer = createReducer(

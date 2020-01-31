@@ -4,17 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { LayoutComponent } from './components/layout/layout.component';
 import { AppComponent } from './containers/app/app.component';
 import { metaReducers, ROOT_REDUCERS } from './reducers';
 
+import { CoffeetableModule } from 'src/app/coffeetable';
 import { DatasourceModule } from 'src/app/datasource';
 
 @NgModule({
   bootstrap: [AppComponent],
   declarations: [
     AppComponent,
-    LayoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +29,7 @@ import { DatasourceModule } from 'src/app/datasource';
     }),
     StoreDevtoolsModule.instrument({}),
     DatasourceModule,
+    CoffeetableModule,
   ],
 })
 export class CoreModule { }

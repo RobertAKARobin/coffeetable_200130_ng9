@@ -8,27 +8,15 @@ import {
 
 import { environment } from 'src/environments/environment';
 
-import * as fromLayout from './layout.reducer';
-
-export interface State {
-  [fromLayout.featureKey]: fromLayout.State;
-}
+// tslint:disable
+export interface State {}
 
 export const ROOT_REDUCERS = new InjectionToken<
   ActionReducerMap<State, Action>
 >('Root reducers token', {
-  factory: () => ({
-    [fromLayout.featureKey]: fromLayout.reducer,
-  }),
+  factory: () => ({}),
 });
 
 export const metaReducers: Array<MetaReducer<State>> = !environment.production
   ? []
   : [];
-
-export const selectLayout = (state: State) => state[fromLayout.featureKey];
-
-export const selectLayoutMessage = createSelector(
-  selectLayout,
-  (state: fromLayout.State) => state.message,
-);

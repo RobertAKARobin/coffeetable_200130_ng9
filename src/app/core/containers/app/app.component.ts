@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import * as fromCore from 'src/app/core/reducers';
+import * as fromDatasource from 'src/app/datasource/reducers';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +11,13 @@ import * as fromCore from 'src/app/core/reducers';
 })
 export class AppComponent {
 
-  public message$: Observable<string>;
+  // tslint:disable
+  public data$: Observable<any[]>;
 
   constructor(
-    private store: Store<fromCore.State>,
+    private store: Store<fromDatasource.State>,
   ) {
-    this.message$ = this.store.pipe(select(fromCore.selectLayoutMessage));
+    this.data$ = this.store.pipe(select(fromDatasource.selectData));
   }
 
 }

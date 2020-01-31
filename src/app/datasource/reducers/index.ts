@@ -1,4 +1,11 @@
-import { Action, createReducer, on } from '@ngrx/store';
+import {
+  Action,
+  createReducer,
+  createSelector,
+  on,
+} from '@ngrx/store';
+
+import * as fromRoot from 'src/app/core/reducers';
 
 export const featureKey = 'datasource';
 
@@ -18,3 +25,10 @@ const _reducer = createReducer(
 export function reducer(state: State | undefined, action: Action) {
   return _reducer(state, action);
 }
+
+export const selectState = (state: fromRoot.State) => state[featureKey];
+
+export const selectData = createSelector(
+  selectState,
+  (state: State) => state.data,
+);
