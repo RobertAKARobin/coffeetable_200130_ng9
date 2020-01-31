@@ -1,37 +1,32 @@
+import { InjectionToken } from '@angular/core';
 import {
   Action,
-  combineReducers,
-  createFeatureSelector,
+  ActionReducerMap,
   createSelector,
+  MetaReducer,
 } from '@ngrx/store';
 
-import * as fromRoot from 'src/app/reducers';
+import { environment } from 'src/environments/environment';
+
 import * as fromLayout from './layout.reducer';
 
-export const featureKey = 'core';
-
-export interface CoreState {
+export interface State {
   [fromLayout.featureKey]: fromLayout.State;
 }
 
-export interface State extends fromRoot.State {
-  [featureKey]: CoreState;
-}
-
-export function reducers(state: CoreState | undefined, action: Action) {
-  return combineReducers({
+export const ROOT_REDUCERS = new InjectionToken<
+  ActionReducerMap<State, Action>
+>('Root reducers token', {
+  factory: () => ({
     [fromLayout.featureKey]: fromLayout.reducer,
-  })(state, action);
-}
+  }),
+});
 
-export const selectCore = createFeatureSelector<State, CoreState>(
-  featureKey,
-);
+export const metaReducers: Array<MetaReducer<State>> = !environment.production
+  ? []
+  : [];
 
-export const selectLayout = createSelector(
-  selectCore,
-  (state: CoreState) => state[fromLayout.featureKey],
-);
+export const selectLayout = (state: State) => state[fromLayout.featureKey];
 
 export const selectLayoutMessage = createSelector(
   selectLayout,

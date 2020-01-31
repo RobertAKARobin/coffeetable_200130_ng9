@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { LayoutComponent } from './components/layout/layout.component';
 import { AppComponent } from './containers/app/app.component';
-import * as fromCore from './reducers';
+import { metaReducers, ROOT_REDUCERS } from './reducers';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,16 @@ import * as fromCore from './reducers';
   ],
   imports: [
     CommonModule,
-    StoreModule.forFeature(fromCore.featureKey, fromCore.reducers),
+    StoreModule.forRoot(ROOT_REDUCERS, {
+      metaReducers,
+      runtimeChecks: {
+        strictActionImmutability: true,
+        strictActionSerializability: true,
+        strictStateImmutability: true,
+        strictStateSerializability: true,
+      },
+    }),
+    StoreDevtoolsModule.instrument({}),
   ],
 })
 export class CoreModule { }
