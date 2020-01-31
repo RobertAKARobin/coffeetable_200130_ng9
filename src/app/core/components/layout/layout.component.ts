@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  Input,
+} from '@angular/core';
 
 @Component({
   selector: 'app-layout',
@@ -6,5 +9,7 @@ import { Component } from '@angular/core';
   templateUrl: './layout.component.html',
 })
 export class LayoutComponent {
+
+  @Input() public message: string;
 
 }
