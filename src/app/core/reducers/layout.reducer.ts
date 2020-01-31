@@ -10,10 +10,10 @@ export const initialState: State = {
   message: 'Hello, world!',
 };
 
-const layoutReducer = createReducer(
+const _reducer = createReducer(
   initialState,
 );
 
 export function reducer(state: State | undefined, action: Action) {
-  return layoutReducer(state, action);
+  return _reducer(state, action);
 }
