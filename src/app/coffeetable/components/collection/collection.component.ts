@@ -3,6 +3,8 @@ import {
   Input,
 } from '@angular/core';
 
+import * as Coffeetable from 'src/app/coffeetable/models';
+
 @Component({
   selector: 'cf-collection',
   styleUrls: ['./collection.component.scss'],
@@ -10,7 +12,6 @@ import {
 })
 export class CollectionComponent {
 
-  // tslint:disable
-  @Input() public data: any[];
+  @Input() public collection: Coffeetable.Collection;
 
 }

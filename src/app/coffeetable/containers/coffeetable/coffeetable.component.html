@@ -1,0 +1,8 @@
+<ng-container *ngFor="let collection of (collections$ | async); let index = index">
+  <h1>Collection {{ index }}</h1>
+  <cf-collection [collection]="collection"></cf-collection>
+</ng-container>
+
+<button
+  (click)="createCollection()"
+>Add collection</button>

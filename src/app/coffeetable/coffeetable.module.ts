@@ -3,14 +3,16 @@ import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 
 import { CollectionComponent } from './components/collection/collection.component';
+import { CoffeetableComponent } from './containers/coffeetable/coffeetable.component';
 import * as fromCoffeetable from './reducers';
 
 @NgModule({
   declarations: [
+    CoffeetableComponent,
     CollectionComponent,
   ],
   exports: [
-    CollectionComponent,
+    CoffeetableComponent,
   ],
   imports: [
     CommonModule,

@@ -8,7 +8,6 @@ import { AppComponent } from './containers/app/app.component';
 import { metaReducers, ROOT_REDUCERS } from './reducers';
 
 import { CoffeetableModule } from 'src/app/coffeetable';
-import { DatasourceModule } from 'src/app/datasource';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -28,7 +27,6 @@ import { DatasourceModule } from 'src/app/datasource';
       },
     }),
     StoreDevtoolsModule.instrument({}),
-    DatasourceModule,
     CoffeetableModule,
   ],
 })
