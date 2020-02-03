@@ -1,0 +1,6 @@
+<ul>
+  <li>Collection head</li>
+  <li *ngFor="let record of collection.records; let index = index">
+    <cf-record [record]="record"></cf-record>
+  </li>
+</ul>

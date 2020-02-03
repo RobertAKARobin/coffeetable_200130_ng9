@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
+import * as CoffeetableActions from '../../actions';
 import * as Coffeetable from '../../models';
 import * as fromCoffeetable from '../../reducers';
-import * as CoffeetableActions from '../../actions';
 
 @Component({
   selector: 'cf-coffeetable',
