@@ -21,7 +21,7 @@ export const initialState: State = {
 
 const _reducer = createReducer(
   initialState,
-  on(CoffeetableActions.createCollection, (state: State) => ({
+  on(CoffeetableActions.collectionCreate, (state: State) => ({
     ...state,
     collections: [
       ...state.collections,

@@ -1,5 +1,9 @@
 import { createAction, props } from '@ngrx/store';
 
-export const createCollection = createAction(
+export const collectionCreate = createAction(
   '[Collection] Create collection',
+);
+
+export const recordCreate = createAction(
+  '[Collection] Create recprd',
 );

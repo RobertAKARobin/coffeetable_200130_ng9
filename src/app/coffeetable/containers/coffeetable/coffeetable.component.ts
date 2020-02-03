@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
-import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import * as CoffeetableActions from '../../actions';
 import * as Coffeetable from '../../models';
-import * as fromCoffeetable from '../../reducers';
+import { StoreService } from '../../services';
 
 @Component({
   selector: 'cf-coffeetable',
@@ -16,13 +14,13 @@ export class CoffeetableComponent {
   public collections$: Observable<Coffeetable.Collection[]>;
 
   constructor(
-    private _store: Store<fromCoffeetable.State>,
+    private _store: StoreService,
   ) {
-    this.collections$ = this._store.pipe(select(fromCoffeetable.selectCollections));
+    this.collections$ = this._store.collectionGetAll();
   }
 
-  public createCollection(): void {
-    this._store.dispatch(CoffeetableActions.createCollection());
+  public createCollection() {
+    this._store.collectionCreate();
   }
 
 }
