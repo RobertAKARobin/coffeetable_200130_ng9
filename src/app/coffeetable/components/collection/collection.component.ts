@@ -3,7 +3,7 @@ import {
   Input,
 } from '@angular/core';
 
-import * as Coffeetable from 'src/app/coffeetable/models';
+import { Collection } from '../../store';
 
 @Component({
   selector: 'cf-collection',
@@ -12,6 +12,6 @@ import * as Coffeetable from 'src/app/coffeetable/models';
 })
 export class CollectionComponent {
 
-  @Input() public collection: Coffeetable.Collection;
+  @Input() public collection: Collection.Collection;
 
 }

@@ -2,22 +2,27 @@ import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import * as CoffeetableActions from '../actions';
-import * as Coffeetable from '../models';
-import * as fromCoffeetable from '../reducers';
+import {
+  Coffeetable,
+  Collection,
+} from '../store';
 
 @Injectable()
 export class StoreService {
 
   constructor(
-    private _store: Store<fromCoffeetable.State>,
+    private _store: Store<Coffeetable.State>,
   ) { }
 
   public collectionCreate(): void {
-    this._store.dispatch(CoffeetableActions.collectionCreate());
+    this._store.dispatch(Collection.Actions.addOne({
+      payload: {
+        id: Date.now().toString(),
+      },
+    }));
   }
 
-  public collectionGetAll(): Observable<Coffeetable.Collection[]> {
-    return this._store.pipe(select(fromCoffeetable.selectCollections));
+  public collectionGetAll(): Observable<Collection.Collection[]> {
+    return this._store.pipe(select(Collection.selectAll));
   }
 }

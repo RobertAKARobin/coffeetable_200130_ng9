@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import * as Coffeetable from '../../models';
 import { StoreService } from '../../services';
+import { Collection } from '../../store';
 
 @Component({
   selector: 'cf-coffeetable',
@@ -11,7 +11,7 @@ import { StoreService } from '../../services';
 })
 export class CoffeetableComponent {
 
-  public collections$: Observable<Coffeetable.Collection[]>;
+  public collections$: Observable<Collection.Collection[]>;
 
   constructor(
     private _store: StoreService,
