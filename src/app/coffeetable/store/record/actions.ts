@@ -14,6 +14,7 @@ export const updateOne = createAction(
   props<{
     id: Model['id'],
     changes: {
+      // tslint:disable
       [key: string]: any,
     },
   }>(),

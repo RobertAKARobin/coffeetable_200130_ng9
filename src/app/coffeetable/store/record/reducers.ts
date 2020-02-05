@@ -20,7 +20,7 @@ const _reducer = createReducer(
     }, state),
   ),
   on(Actions.updateOne,
-    (state, action) => Model.adapter.updateOne(action, state),
+    (state, payload) => Model.adapter.updateOne(payload, state),
   ),
 );
 

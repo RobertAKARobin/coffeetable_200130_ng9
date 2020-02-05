@@ -26,22 +26,18 @@ export class CollectionComponent {
   }
 
   public createField() {
-    this._store.dispatch(Field.Actions.addOne({
-      payload: {
-        id: Date.now().toString(),
-      },
-    }));
+    this._store.dispatch(Field.Actions.addOne());
   }
 
   public createRecord() {
     this._store.dispatch(Record.Actions.addOne());
   }
 
-  public updateRecord(recordId: string, fieldId: string, event) {
+  public updateRecord(recordId: string, fieldId: string, event: Event) {
     this._store.dispatch(Record.Actions.updateOne({
       changes: {
         data: {
-          [fieldId]: event.target.value,
+          [fieldId]: (event.target as HTMLInputElement).value,
         },
       },
       id: recordId,
