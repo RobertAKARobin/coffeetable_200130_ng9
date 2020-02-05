@@ -29,12 +29,12 @@ export class CollectionComponent {
     this._store.dispatch(Field.Actions.addOne());
   }
 
-  public fieldUpdate(fieldId: string, event: Event) {
+  public fieldUpdate(field: Field.Schema, value: string) {
     this._store.dispatch(Field.Actions.updateOne({
       changes: {
-        getter: (event.target as HTMLInputElement).value,
+        getter: value,
       },
-      id: fieldId,
+      id: field.id,
     }));
   }
 
@@ -42,14 +42,15 @@ export class CollectionComponent {
     this._store.dispatch(Record.Actions.addOne());
   }
 
-  public recordUpdate(recordId: string, fieldId: string, event: Event) {
+  public recordUpdate(record: Record.Schema, field: Field.Schema, value: string) {
     this._store.dispatch(Record.Actions.updateOne({
       changes: {
         data: {
-          [fieldId]: (event.target as HTMLInputElement).value,
+          ...record.data,
+          [field.id]: value,
         },
       },
-      id: recordId,
+      id: record.id,
     }));
   }
 

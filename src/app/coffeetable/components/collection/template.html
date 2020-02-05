@@ -8,7 +8,7 @@
       </th>
       <th *ngFor="let field of (fields$ | async); let index = index">
         <input type="text"
-          (change)="fieldUpdate(field.id, $event)"
+          (change)="fieldUpdate(field, $event.target.value)"
           [value]="field.getter || ''"
         />
       </th>
@@ -19,7 +19,7 @@
       <td>{{ index + 1 }}</td>
       <td *ngFor="let field of (fields$ | async);">
         <input type="text"
-          (change)="recordUpdate(record.id, field.id, $event)"
+          (change)="recordUpdate(record, field, $event.target.value)"
           [value]="record.data[field.id] || ''"
         />
       </td>
