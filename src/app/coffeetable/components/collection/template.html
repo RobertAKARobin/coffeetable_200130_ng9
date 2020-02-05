@@ -7,7 +7,10 @@
         <button (click)="recordCreate()">Create Record</button>
       </th>
       <th *ngFor="let field of (fields$ | async); let index = index">
-        <span>{{ field.id }}</span>
+        <input type="text"
+          (change)="fieldUpdate(field.id, $event)"
+          [value]="field.getter || ''"
+        />
       </th>
     </tr>
   </thead>

@@ -29,6 +29,15 @@ export class CollectionComponent {
     this._store.dispatch(Field.Actions.addOne());
   }
 
+  public fieldUpdate(fieldId: string, event: Event) {
+    this._store.dispatch(Field.Actions.updateOne({
+      changes: {
+        getter: (event.target as HTMLInputElement).value,
+      },
+      id: fieldId,
+    }));
+  }
+
   public recordCreate() {
     this._store.dispatch(Record.Actions.addOne());
   }

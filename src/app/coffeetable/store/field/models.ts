@@ -10,6 +10,7 @@ export const Name = getEntityName('field');
 export const featureKey = 'fields';
 
 export interface Field {
+  getter?: string;
   id: string;
 }
 
