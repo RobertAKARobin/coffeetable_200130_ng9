@@ -2,9 +2,9 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 
+import { CoffeetableComponent } from './components/coffeetable/coffeetable.component';
 import { CollectionComponent } from './components/collection/collection.component';
 import { RecordComponent } from './components/record/record.component';
-import { CoffeetableComponent } from './containers/coffeetable/coffeetable.component';
 
 import { Coffeetable } from './store';
 
