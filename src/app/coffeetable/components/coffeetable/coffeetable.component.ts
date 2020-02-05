@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 import {
   Coffeetable,
-  Collection,
+  Field,
 } from '../../store';
 
 @Component({
@@ -14,16 +14,16 @@ import {
 })
 export class CoffeetableComponent {
 
-  public collections$: Observable<Collection.Collection[]>;
+  public fields$: Observable<Field.Field[]>;
 
   constructor(
     private _store: Store<Coffeetable.State>,
   ) {
-    this.collections$ = this._store.select(Collection.selectAll);
+    this.fields$ = this._store.select(Field.selectAll);
   }
 
-  public createCollection() {
-    this._store.dispatch(Collection.Actions.addOne({
+  public createField() {
+    this._store.dispatch(Field.Actions.addOne({
       payload: {
         id: Date.now().toString(),
       },
