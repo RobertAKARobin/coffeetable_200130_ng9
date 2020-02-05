@@ -3,21 +3,21 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import {
-  Coffeetable,
+  Collection,
   Field,
 } from '../../store';
 
 @Component({
   selector: 'cf-coffeetable',
-  styleUrls: ['./coffeetable.component.scss'],
-  templateUrl: './coffeetable.component.html',
+  styleUrls: ['./style.scss'],
+  templateUrl: './template.html',
 })
-export class CoffeetableComponent {
+export class CollectionComponent {
 
   public fields$: Observable<Field.Field[]>;
 
   constructor(
-    private _store: Store<Coffeetable.State>,
+    private _store: Store<Collection.State>,
   ) {
     this.fields$ = this._store.select(Field.selectAll);
   }

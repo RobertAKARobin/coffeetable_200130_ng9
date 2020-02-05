@@ -2,11 +2,11 @@ import {
   createSelector,
 } from '@ngrx/store';
 
-import * as CoffeetableSelectors from '../coffeetable/selectors';
+import * as CollectionSelectors from '../collection/selectors';
 
 import * as Model from './models';
 
-export const selectState = CoffeetableSelectors.selectFields;
+export const selectState = CollectionSelectors.selectFields;
 
 export const {
   selectIds,
