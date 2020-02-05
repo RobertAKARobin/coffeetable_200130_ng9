@@ -1,14 +1,25 @@
-<ul>
-  <li>Collection head</li>
-  <li>
-    <p>Fields:</p>
-    <ul>
-      <li *ngFor="let field of (fields$ | async); let index = index">
-        {{ field.id }}
-      </li>
-      <li>
+<table>
+  <thead>
+    <tr>
+      <th>
         <button (click)="createField()">Add field</button>
-      </li>
-    </ul>
-  </li>
-</ul>
+      </th>
+      <th *ngFor="let field of (fields$ | async); let index = index">
+        <span>{{ field.id }}</span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td [attr.colspan]="(fields$ | async).length + 1">
+        <button (click)="createRecord()">Create Record</button>
+      <td>
+    </tr>
+    <tr *ngFor="let record of (records$ | async); let index = index">
+      <td>{{ index }}</td>
+      <td *ngFor="let field of (fields$ | async);">
+        a
+      </td>
+    </tr>
+  </tbody>
+</table>
