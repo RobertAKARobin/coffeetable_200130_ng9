@@ -7,8 +7,10 @@ import {
 import * as Actions from './actions';
 import * as Model from './models';
 
+import sample from '../sample.json';
+
 export const initialState: Model.State = Model.adapter.getInitialState({
-  // additional entity state properties
+  ...sample.collection.records,
 });
 
 const _reducer = createReducer(
