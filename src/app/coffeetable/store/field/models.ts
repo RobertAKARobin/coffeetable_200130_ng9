@@ -9,15 +9,13 @@ import { getEntityName } from '../utils';
 export const Name = getEntityName('field');
 export const featureKey = 'fields';
 
-export interface Field {
+export interface Schema {
   getter?: string;
   id: string;
 }
 
-export type Model = Field;
-
-export interface State extends EntityState<Model> {
+export interface State extends EntityState<Schema> {
   // additional entities state properties
 }
 
-export const adapter: EntityAdapter<Model> = createEntityAdapter<Model>();
+export const adapter: EntityAdapter<Schema> = createEntityAdapter<Schema>();

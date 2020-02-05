@@ -15,8 +15,8 @@ import {
 })
 export class CollectionComponent {
 
-  public fields$: Observable<Field.Field[]>;
-  public records$: Observable<Record.Record[]>;
+  public fields$: Observable<Field.Schema[]>;
+  public records$: Observable<Record.Schema[]>;
 
   constructor(
     private _store: Store<Collection.State>,

@@ -1,9 +1,9 @@
 import { Update } from '@ngrx/entity';
 import { createAction, props } from '@ngrx/store';
 
-import { Model } from './models';
+import { Name, Schema } from './models';
 
-const prefix = `Field`;
+const prefix = Name.Single;
 
 export const addOne = createAction(
   `${prefix} Add`,
@@ -12,7 +12,7 @@ export const addOne = createAction(
 export const updateOne = createAction(
   `${prefix} Update`,
   props<{
-    id: Model['id'],
+    id: Schema['id'],
     changes: {
       // tslint:disable
       [key: string]: any,

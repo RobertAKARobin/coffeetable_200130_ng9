@@ -9,16 +9,14 @@ import { getEntityName } from '../utils';
 export const Name = getEntityName('record');
 export const featureKey = 'records';
 
-export interface Record {
+export interface Schema {
   // tslint:disable
   data: any;
   id: string;
 }
 
-export type Model = Record;
-
-export interface State extends EntityState<Model> {
+export interface State extends EntityState<Schema> {
   // additional entities state properties
 }
 
-export const adapter: EntityAdapter<Model> = createEntityAdapter<Model>();
+export const adapter: EntityAdapter<Schema> = createEntityAdapter<Schema>();
