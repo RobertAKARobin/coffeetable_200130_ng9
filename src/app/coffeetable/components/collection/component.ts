@@ -34,11 +34,17 @@ export class CollectionComponent {
   }
 
   public createRecord() {
-    this._store.dispatch(Record.Actions.addOne({
-      payload: {
-        data: Date.now().toString(),
-        id: Date.now().toString(),
+    this._store.dispatch(Record.Actions.addOne());
+  }
+
+  public updateRecord(recordId: string, fieldId: string, event) {
+    this._store.dispatch(Record.Actions.updateOne({
+      changes: {
+        data: {
+          [fieldId]: event.target.value,
+        },
       },
+      id: recordId,
     }));
   }
 

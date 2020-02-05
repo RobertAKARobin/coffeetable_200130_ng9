@@ -18,7 +18,11 @@
     <tr *ngFor="let record of (records$ | async); let index = index">
       <td>{{ index }}</td>
       <td *ngFor="let field of (fields$ | async);">
-        a
+        <input
+          type="text"
+          (change)="updateRecord(record.id, field.id, $event)"
+          [value]="record.data[field.id] || ''"
+        />
       </td>
     </tr>
   </tbody>
