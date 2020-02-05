@@ -8,7 +8,7 @@ import * as Model from './models';
 import * as Field from '../field/models';
 import * as Record from '../record/models';
 
-export const selectState = createFeatureSelector(Model.featureKey);
+export const selectState = createFeatureSelector<Model.State>(Model.featureKey);
 
 export const selectFields = createSelector(
   selectState,
