@@ -6,7 +6,6 @@ import { CollectionComponent } from './components/collection/collection.componen
 import { RecordComponent } from './components/record/record.component';
 import { CoffeetableComponent } from './containers/coffeetable/coffeetable.component';
 
-import { StoreService } from './services';
 import { Coffeetable } from './store';
 
 @NgModule({
@@ -24,9 +23,6 @@ import { Coffeetable } from './store';
       Coffeetable.featureKey,
       Coffeetable.Store.reducers,
     ),
-  ],
-  providers: [
-    StoreService,
   ],
 })
 export class CoffeetableModule { }
