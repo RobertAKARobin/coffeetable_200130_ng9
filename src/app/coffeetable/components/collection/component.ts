@@ -15,7 +15,7 @@ import {
 })
 export class CollectionComponent {
 
-  public fields$: Observable<Field.Schema[]>;
+  public fields$: Observable<Field.Field[]>;
   public records$: Observable<Record.Schema[]>;
 
   constructor(

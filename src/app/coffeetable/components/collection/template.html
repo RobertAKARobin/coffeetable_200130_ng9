@@ -18,10 +18,15 @@
     <tr *ngFor="let record of (records$ | async); let index = index">
       <td>{{ index + 1 }}</td>
       <td *ngFor="let field of (fields$ | async);">
-        <input type="text"
-          (change)="recordUpdate(record, field, $event.target.value)"
-          [value]="record.data[field.id] || ''"
-        />
+        <ng-container *ngIf="field.hasGetter">
+          {{ field.getValue(record) }}
+        </ng-container>
+        <ng-container *ngIf="!field.hasGetter">
+          <input type="text"
+            (change)="recordUpdate(record, field, $event.target.value)"
+            [value]="record.data[field.id] || ''"
+          />
+        </ng-container>
       </td>
     </tr>
   </tbody>
