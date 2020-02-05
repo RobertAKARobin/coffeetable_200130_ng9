@@ -25,15 +25,15 @@ export class CollectionComponent {
     this.records$ = this._store.select(Record.selectAll);
   }
 
-  public createField() {
+  public fieldCreate() {
     this._store.dispatch(Field.Actions.addOne());
   }
 
-  public createRecord() {
+  public recordCreate() {
     this._store.dispatch(Record.Actions.addOne());
   }
 
-  public updateRecord(recordId: string, fieldId: string, event: Event) {
+  public recordUpdate(recordId: string, fieldId: string, event: Event) {
     this._store.dispatch(Record.Actions.updateOne({
       changes: {
         data: {
