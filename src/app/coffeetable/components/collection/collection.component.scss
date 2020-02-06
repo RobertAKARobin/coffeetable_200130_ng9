@@ -18,10 +18,13 @@ textarea {
   width: 100%;
 }
 
-th.focus {
-  background-color: #eee;
-}
+.focus {
+  &[cfFieldHeader],
+  &[cfRecordHeader] {
+    background-color: #eee;
+  }
 
-td.focus {
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, .5) inset;
+  &[cfRecordValue] {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .5) inset;
+  }
 }

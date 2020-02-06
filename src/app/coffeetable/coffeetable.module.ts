@@ -7,12 +7,14 @@ import { Collection } from './store';
 import { CollectionComponent } from './components/collection/collection.component';
 import { FieldHeaderComponent } from './components/field-header/field-header.component';
 import { RecordValueComponent } from './components/record-value/record-value.component';
+import { RecordHeaderComponent } from './components/record-header/record-header.component';
 
 @NgModule({
   declarations: [
     CollectionComponent,
     RecordValueComponent,
     FieldHeaderComponent,
+    RecordHeaderComponent,
   ],
   exports: [
     CollectionComponent,
