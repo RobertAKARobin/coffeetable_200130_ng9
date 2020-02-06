@@ -1,0 +1,26 @@
+{
+  "extends": "stylelint-config-standard",
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "selector-type-case": null,
+    "color-hex-length": "short",
+    "order/properties-alphabetical-order": true,
+    "number-leading-zero": "never",
+    "string-quotes": "single",
+    "max-empty-lines": null,
+    "selector-pseudo-element-colon-notation": "single",
+    "no-descending-specificity": null,
+    "selector-pseudo-class-no-unknown": null,
+    "at-rule-no-unknown": [
+      true,
+      { ignoreAtRules: [ "each" ] },
+    ],
+    "function-url-quotes": null,
+    "property-no-unknown": [
+      true,
+      { ignoreProperties: [ "scrollbar-width" ] },
+    ]
+  },
+}
