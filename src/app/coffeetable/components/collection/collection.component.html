@@ -5,12 +5,7 @@
       <button (click)="recordCreate()">Create Record</button>
     </th>
     <ng-container *ngFor="let field of (fields$ | async); let index = index">
-      <th>
-        <textarea
-          (change)="fieldUpdate(field, $event.target.value)"
-          [value]="field.getter || ''"
-        ></textarea>
-      </th>
+      <th cfFieldHeader [field]="field"></th>
     </ng-container>
   </tr>
   <ng-container *ngFor="let record of (records$ | async); let index = index">

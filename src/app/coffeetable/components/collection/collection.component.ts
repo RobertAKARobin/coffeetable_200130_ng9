@@ -29,29 +29,8 @@ export class CollectionComponent {
     this._store.dispatch(Field.Actions.addOne());
   }
 
-  public fieldUpdate(field: Field.Schema, value: string) {
-    this._store.dispatch(Field.Actions.updateOne({
-      changes: {
-        getter: value,
-      },
-      id: field.id,
-    }));
-  }
-
   public recordCreate() {
     this._store.dispatch(Record.Actions.addOne());
-  }
-
-  public recordUpdate(record: Record.Schema, field: Field.Schema, value: string) {
-    this._store.dispatch(Record.Actions.updateOne({
-      changes: {
-        data: {
-          ...record.data,
-          [field.id]: value,
-        },
-      },
-      id: record.id,
-    }));
   }
 
 }

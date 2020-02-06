@@ -5,12 +5,14 @@ import { StoreModule } from '@ngrx/store';
 import { Collection } from './store';
 
 import { CollectionComponent } from './components/collection/collection.component';
+import { FieldHeaderComponent } from './components/field-header/field-header.component';
 import { RecordValueComponent } from './components/record-value/record-value.component';
 
 @NgModule({
   declarations: [
     CollectionComponent,
     RecordValueComponent,
+    FieldHeaderComponent,
   ],
   exports: [
     CollectionComponent,
