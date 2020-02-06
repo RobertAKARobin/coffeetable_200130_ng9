@@ -10,8 +10,8 @@ import {
 
 @Component({
   selector: 'cf-coffeetable',
-  styleUrls: ['./style.scss'],
-  templateUrl: './template.html',
+  styleUrls: ['./collection.component.scss'],
+  templateUrl: './collection.component.html',
 })
 export class CollectionComponent {
 

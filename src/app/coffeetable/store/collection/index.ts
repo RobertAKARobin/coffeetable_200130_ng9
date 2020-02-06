@@ -1,7 +1,7 @@
-import * as Store from './reducers';
+import * as Store from './collection.reducers';
 
-export * from './models';
-export * from './selectors';
+export * from './collection.models';
+export * from './collection.selectors';
 export {
   Store,
 };

@@ -2,9 +2,9 @@ import {
   createSelector,
 } from '@ngrx/store';
 
-import * as CollectionSelectors from '../collection/selectors';
+import * as CollectionSelectors from '../collection/collection.selectors';
 
-import * as Model from './models';
+import * as Model from './record.models';
 
 export const selectState = CollectionSelectors.selectRecords;
 

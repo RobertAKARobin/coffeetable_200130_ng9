@@ -1,4 +1,4 @@
-import * as Model from './models';
+import * as Model from './collection.models';
 
 import * as Field from '../field';
 import * as Record from '../record';

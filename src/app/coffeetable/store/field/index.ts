@@ -1,9 +1,9 @@
 
-import * as Actions from './actions';
-import * as Store from './reducers';
+import * as Actions from './field.actions';
+import * as Store from './field.reducers';
 
-export * from './models';
-export * from './selectors';
+export * from './field.models';
+export * from './field.selectors';
 export {
   Actions,
   Store,

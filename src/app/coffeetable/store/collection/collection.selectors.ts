@@ -3,10 +3,10 @@ import {
   createSelector,
 } from '@ngrx/store';
 
-import * as Model from './models';
+import * as Model from './collection.models';
 
-import * as Field from '../field/models';
-import * as Record from '../record/models';
+import * as Field from '../field/field.models';
+import * as Record from '../record/record.models';
 
 export const selectState = createFeatureSelector<Model.State>(Model.featureKey);
 

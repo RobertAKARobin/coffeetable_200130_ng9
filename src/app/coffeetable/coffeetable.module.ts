@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 
-import { CollectionComponent } from './components/collection/component';
+import { CollectionComponent } from './components/collection/collection.component';
 
 import { Collection } from './store';
 

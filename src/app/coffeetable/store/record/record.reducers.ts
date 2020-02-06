@@ -4,19 +4,20 @@ import {
   on,
 } from '@ngrx/store';
 
-import * as Actions from './actions';
-import * as Model from './models';
+import * as Actions from './record.actions';
+import * as Model from './record.models';
 
 import sample from '../sample.json';
 
 export const initialState: Model.State = Model.adapter.getInitialState({
-  ...sample.collection.fields,
+  ...sample.collection.records,
 });
 
 const _reducer = createReducer(
   initialState,
   on(Actions.addOne,
-    (state, payload) => Model.adapter.addOne({
+    (state, action) => Model.adapter.addOne({
+      data: {},
       id: Date.now().toString(),
     }, state),
   ),

@@ -1,5 +1,5 @@
-import * as Field from '../field/models';
-import * as Record from '../record/models';
+import * as Field from '../field/field.models';
+import * as Record from '../record/record.models';
 
 export const featureKey = 'collection';
 

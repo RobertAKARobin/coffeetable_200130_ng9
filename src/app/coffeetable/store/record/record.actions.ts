@@ -1,7 +1,7 @@
 import { Update } from '@ngrx/entity';
 import { createAction, props } from '@ngrx/store';
 
-import { Name, Schema } from './models';
+import { Name, Schema } from './record.models';
 
 const prefix = Name.Single;
 

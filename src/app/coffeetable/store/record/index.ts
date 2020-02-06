@@ -1,9 +1,9 @@
 
-import * as Actions from './actions';
-import * as Store from './reducers';
+import * as Actions from './record.actions';
+import * as Store from './record.reducers';
 
-export * from './models';
-export * from './selectors';
+export * from './record.models';
+export * from './record.selectors';
 export {
   Actions,
   Store,

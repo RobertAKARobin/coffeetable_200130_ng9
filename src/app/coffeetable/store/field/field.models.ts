@@ -4,7 +4,7 @@ import {
   EntityState,
 } from '@ngrx/entity';
 
-import * as Record from '../record/models';
+import * as Record from '../record/record.models';
 import { getEntityName } from '../utils';
 
 export const Name = getEntityName('field');
