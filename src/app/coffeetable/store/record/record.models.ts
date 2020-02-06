@@ -10,8 +10,7 @@ export const Name = getEntityName('record');
 export const featureKey = 'records';
 
 export interface Schema {
-  // tslint:disable
-  data: any;
+  data: any; // tslint:disable-line
   id: string;
 }
 

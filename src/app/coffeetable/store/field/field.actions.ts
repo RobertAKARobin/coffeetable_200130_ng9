@@ -14,8 +14,7 @@ export const updateOne = createAction(
   props<{
     id: Schema['id'],
     changes: {
-      // tslint:disable
-      [key: string]: any,
+      [key: string]: any, // tslint:disable-line
     },
   }>(),
 );

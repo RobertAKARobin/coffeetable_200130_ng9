@@ -8,8 +8,7 @@ import {
 
 import { environment } from 'src/environments/environment';
 
-// tslint:disable
-export interface State {}
+export interface State {} // tslint:disable-line
 
 export const ROOT_REDUCERS = new InjectionToken<
   ActionReducerMap<State, Action>

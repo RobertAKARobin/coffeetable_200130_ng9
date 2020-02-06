@@ -38,7 +38,7 @@ export class Field implements Schema {
     this.hasGetter = Boolean(state.getter);
     this.id = state.id;
     if (this.hasGetter) {
-      this.getValue = eval(`($record) => ${state.getter}`);
+      this.getValue = eval(`($record) => ${state.getter}`); // tslint:disable-line
     } else {
       this.getValue = () => null;
     }
