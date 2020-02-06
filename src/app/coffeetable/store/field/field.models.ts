@@ -26,7 +26,7 @@ export type displayValue = (
 
 export class Field implements Schema {
 
-  public getValue?: ($record: Record.Schema) => displayValue;
+  public getValue: ($record: Record.Schema) => displayValue;
   public getter: (string | undefined);
   public hasGetter: boolean;
   public id: string;
@@ -39,6 +39,8 @@ export class Field implements Schema {
     this.id = state.id;
     if (this.hasGetter) {
       this.getValue = eval(`($record) => ${state.getter}`);
+    } else {
+      this.getValue = () => null;
     }
   }
 

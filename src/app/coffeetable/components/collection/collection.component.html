@@ -1,38 +1,24 @@
-<div class="cf-collection">
-  <div class="cf-cell cf-collection__fields">
-    <div>
+<table>
+  <tr>
+    <th>
       <button (click)="fieldCreate()">Add field</button>
       <button (click)="recordCreate()">Create Record</button>
-    </div>
+    </th>
     <ng-container *ngFor="let field of (fields$ | async); let index = index">
-      <div class="cf-cell cf-field"
-        [class.cf--getter]="field.hasGetter"
-      >
-        <textarea class="cf-field__getter"
+      <th>
+        <textarea
           (change)="fieldUpdate(field, $event.target.value)"
           [value]="field.getter || ''"
         ></textarea>
-      </div>
+      </th>
     </ng-container>
-  </div>
-  <div class="cf-record"
-    *ngFor="let record of (records$ | async); let index = index"
-  >
-    <div class="cf-cell">{{ index + 1 }}</div>
-    <ng-container *ngFor="let field of (fields$ | async);">
-      <div class="cf-cell cf-record__value"
-        [class.cf--getter]="field.hasGetter"
-      >
-        <ng-container *ngIf="field.hasGetter">
-          {{ field.getValue(record) }}
-        </ng-container>
-        <ng-container *ngIf="!field.hasGetter">
-          <textarea type="text"
-            (change)="recordUpdate(record, field, $event.target.value)"
-            [value]="record.data[field.id] || ''"
-          ></textarea>
-        </ng-container>
-      </div>
-    </ng-container>
-  </div>
-</div>
+  </tr>
+  <ng-container *ngFor="let record of (records$ | async); let index = index">
+    <tr>
+      <td>{{ index + 1 }}</td>
+      <ng-container *ngFor="let field of (fields$ | async);">
+        <td cfRecordValue [record]="record" [field]="field"></td>
+      </ng-container>
+    </tr>
+  </ng-container>
+</table>

@@ -1,0 +1,8 @@
+<textarea *ngIf="field.hasGetter"
+  disabled
+  [value]="value"
+></textarea>
+<textarea *ngIf="!field.hasGetter"
+  (change)="update($event.target.value)"
+  [value]="record.data[field.id] || ''"
+></textarea>
