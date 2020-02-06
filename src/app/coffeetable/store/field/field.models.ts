@@ -47,7 +47,7 @@ export class Field implements Schema {
 }
 
 export interface State extends EntityState<Schema> {
-  // additional entities state properties
+  idOfFocus: (string | undefined);
 }
 
 export const adapter: EntityAdapter<Schema> = createEntityAdapter<Schema>();

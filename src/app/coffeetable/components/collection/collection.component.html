@@ -5,14 +5,23 @@
       <button (click)="recordCreate()">Create Record</button>
     </th>
     <ng-container *ngFor="let field of (fields$ | async); let index = index">
-      <th cfFieldHeader [field]="field"></th>
+      <th cfFieldHeader [field]="field"
+        [class.focus]="field.id === (fieldFocusId$ | async)"
+      ></th>
     </ng-container>
   </tr>
   <ng-container *ngFor="let record of (records$ | async); let index = index">
     <tr>
-      <td>{{ index + 1 }}</td>
+      <th
+        [class.focus]="record.id === (recordFocusId$ | async)"
+      >{{ index + 1 }}</th>
       <ng-container *ngFor="let field of (fields$ | async);">
-        <td cfRecordValue [record]="record" [field]="field"></td>
+        <td cfRecordValue [record]="record" [field]="field"
+          [class.focus]="record.id === (recordFocusId$ | async) && field.id === (fieldFocusId$ | async)"
+          (blur)="unsetFocus()"
+          (click)="setFocus(record, field)"
+          (focus)="setFocus(record, field)"
+        ></td>
       </ng-container>
     </tr>
   </ng-container>

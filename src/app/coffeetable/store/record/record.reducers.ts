@@ -11,6 +11,7 @@ import sample from '../sample.json';
 
 export const initialState: Model.State = Model.adapter.getInitialState({
   ...sample.collection.records,
+  idOfFocus: undefined,
 });
 
 const _reducer = createReducer(
@@ -23,6 +24,12 @@ const _reducer = createReducer(
   ),
   on(Actions.updateOne,
     (state, payload) => Model.adapter.updateOne(payload, state),
+  ),
+  on(Actions.setFocus,
+    (state, payload) => ({
+      ...state,
+      idOfFocus: payload.id,
+    }),
   ),
 );
 

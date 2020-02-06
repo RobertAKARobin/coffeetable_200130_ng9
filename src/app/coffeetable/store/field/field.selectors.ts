@@ -14,3 +14,8 @@ export const selectAll = createSelector(
   adapter.selectAll,
   (fields: Model.Schema[]) => fields.map(field => new Model.Field(field)),
 );
+
+export const selectIdOfFocus = createSelector(
+  selectState,
+  (state: Model.State) => state.idOfFocus,
+);

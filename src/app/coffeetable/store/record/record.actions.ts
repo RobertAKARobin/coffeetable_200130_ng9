@@ -1,9 +1,9 @@
 import { Update } from '@ngrx/entity';
 import { createAction, props } from '@ngrx/store';
 
-import { Name, Schema } from './record.models';
+import * as Model from './record.models';
 
-const prefix = Name.Single;
+const prefix = Model.Name.Single;
 
 export const addOne = createAction(
   `${prefix} Add`,
@@ -12,9 +12,16 @@ export const addOne = createAction(
 export const updateOne = createAction(
   `${prefix} Update`,
   props<{
-    id: Schema['id'],
+    id: Model.Schema['id'],
     changes: {
       [key: string]: any, // tslint:disable-line
     },
+  }>(),
+);
+
+export const setFocus = createAction(
+  `${prefix} Set focus`,
+  props<{
+    id: Model.State['idOfFocus'],
   }>(),
 );

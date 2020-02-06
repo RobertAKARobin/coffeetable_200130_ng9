@@ -3,6 +3,8 @@
   [value]="value"
 ></textarea>
 <textarea *ngIf="!field.hasGetter"
+  (blur)="blur.emit()"
   (change)="update($event.target.value)"
+  (focus)="focus.emit()"
   [value]="record.data[field.id] || ''"
 ></textarea>

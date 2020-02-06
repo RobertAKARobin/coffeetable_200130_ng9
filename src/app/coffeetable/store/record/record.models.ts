@@ -15,7 +15,20 @@ export interface Schema {
 }
 
 export interface State extends EntityState<Schema> {
-  // additional entities state properties
+  idOfFocus: (string | undefined);
+}
+
+export class Record implements Schema {
+  public data !: any; // tslint:disable-line
+  public id !: string;
+
+  constructor(
+    state: Schema,
+  ) {
+    this.data = state.data;
+    this.id = state.id;
+  }
+
 }
 
 export const adapter: EntityAdapter<Schema> = createEntityAdapter<Schema>();
