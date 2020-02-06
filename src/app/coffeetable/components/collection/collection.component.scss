@@ -5,14 +5,14 @@ table {
 td,
 th {
   border: 1px solid rgba(0, 0, 0, .2);
-  padding: 5px 5px;
   position: relative;
 }
 
-:host ::ng-deep textarea {
+textarea {
   background-color: transparent;
   display: block;
   height: 100%;
+  padding: 5px 5px;
   resize: none;
   width: 100%;
 }
