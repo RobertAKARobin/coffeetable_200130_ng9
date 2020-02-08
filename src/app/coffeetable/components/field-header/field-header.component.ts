@@ -22,10 +22,10 @@ export class FieldHeaderComponent {
     private _store: Store<Collection.State>,
   ) {}
 
-  public update(value: string) {
+  public update() {
     this._store.dispatch(Field.Actions.updateOne({
       changes: {
-        getter: value,
+        getter: this.field.getter,
       },
       id: this.field.id,
     }));

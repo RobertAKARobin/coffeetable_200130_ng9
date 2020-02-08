@@ -2,6 +2,6 @@
   <ng-content></ng-content>
 </p>
 <textarea
-  (change)="update($event.target.value)"
-  [value]="field.getter || ''"
+  (change)="update()"
+  [(ngModel)]="field.getter"
 ></textarea>
