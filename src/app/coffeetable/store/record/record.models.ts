@@ -15,7 +15,7 @@ export interface Schema {
 }
 
 export interface State extends EntityState<Schema> {
-  idOfFocus: (string | undefined);
+
 }
 
 export class Record implements Schema {

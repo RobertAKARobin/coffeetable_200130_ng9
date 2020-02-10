@@ -1,9 +1,7 @@
 import {
   Component,
-  EventEmitter,
   Input,
   OnInit,
-  Output,
 } from '@angular/core';
 import { Store } from '@ngrx/store';
 
@@ -22,9 +20,6 @@ export class RecordValueComponent implements OnInit {
 
   @Input() public record !: Record.Schema;
   @Input() public field !: Field.Field;
-
-  @Output() public blur = new EventEmitter<void>();
-  @Output() public focus = new EventEmitter<void>();
 
   public value: Field.displayValue;
 

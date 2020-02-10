@@ -6,21 +6,15 @@
     </th>
     <ng-container *ngFor="let field of (fields$ | async); let index = index">
       <th cfFieldHeader [field]="field"
-        [class.focus]="field.id === (fieldFocusId$ | async)"
       >{{ index + 1 }}</th>
     </ng-container>
   </tr>
   <ng-container *ngFor="let record of (records$ | async); let index = index">
     <tr>
       <th cfRecordHeader
-        [class.focus]="record.id === (recordFocusId$ | async)"
       >{{ index + 1 }}</th>
       <ng-container *ngFor="let field of (fields$ | async);">
         <td cfRecordValue [record]="record" [field]="field"
-          [class.focus]="record.id === (recordFocusId$ | async) && field.id === (fieldFocusId$ | async)"
-          (blur)="unsetFocus()"
-          (click)="setFocus(record, field)"
-          (focus)="setFocus(record, field)"
         ></td>
       </ng-container>
     </tr>

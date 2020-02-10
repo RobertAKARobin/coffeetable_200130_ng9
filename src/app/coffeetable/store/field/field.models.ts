@@ -40,14 +40,18 @@ export class Field implements Schema {
     if (this.hasGetter) {
       this.getValue = eval(`($record) => ${state.getter}`); // tslint:disable-line
     } else {
-      this.getValue = () => null;
+      this.getValue = this.getValueById.bind(this);
     }
+  }
+
+  public getValueById($record: Record.Schema) {
+    return $record.data[this.id];
   }
 
 }
 
 export interface State extends EntityState<Schema> {
-  idOfFocus: (string | undefined);
+
 }
 
 export const adapter: EntityAdapter<Schema> = createEntityAdapter<Schema>();

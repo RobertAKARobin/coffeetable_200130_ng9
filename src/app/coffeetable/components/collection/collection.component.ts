@@ -20,17 +20,13 @@ import {
 export class CollectionComponent {
 
   public fields$: Observable<Field.Field[]>;
-  public fieldFocusId$: Observable<string | undefined>;
   public records$: Observable<Record.Record[]>;
-  public recordFocusId$: Observable<string | undefined>;
 
   constructor(
     private _store: Store<Collection.State>,
   ) {
     this.fields$ = this._store.select(Field.selectAll);
-    this.fieldFocusId$ = this._store.select(Field.selectIdOfFocus);
     this.records$ = this._store.select(Record.selectAll);
-    this.recordFocusId$ = this._store.select(Record.selectIdOfFocus);
   }
 
   public fieldCreate() {
@@ -39,16 +35,6 @@ export class CollectionComponent {
 
   public recordCreate() {
     this._store.dispatch(Record.Actions.addOne());
-  }
-
-  public setFocus(record: Record.Record, field: Field.Field) {
-    this._store.dispatch(Record.Actions.setFocus({id: record.id}));
-    this._store.dispatch(Field.Actions.setFocus({id: field.id}));
-  }
-
-  public unsetFocus() {
-    this._store.dispatch(Record.Actions.setFocus({id: undefined}));
-    this._store.dispatch(Field.Actions.setFocus({id: undefined}));
   }
 
 }

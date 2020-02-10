@@ -18,10 +18,3 @@ export const updateOne = createAction(
     },
   }>(),
 );
-
-export const setFocus = createAction(
-  `${prefix} Set focus`,
-  props<{
-    id: Model.State['idOfFocus'],
-  }>(),
-);
